@@ -1,25 +1,18 @@
 package com.example.demo.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-/**
- * Created by Kayne on 09/04/2018.
- */
-@Entity
+@Entity 
 public class LigneFacture {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @ManyToOne
-    private Facture facture;
-
-    @ManyToOne
-    private Article article;
-
-    @Column
-    private Integer quantite;
 
     public Long getId() {
         return id;
@@ -29,13 +22,10 @@ public class LigneFacture {
         this.id = id;
     }
 
-    public Facture getFacture() {
-        return facture;
-    }
 
-    public void setFacture(Facture facture) {
-        this.facture = facture;
-    }
+
+    @ManyToOne
+    private Article article;
 
     public Article getArticle() {
         return article;
@@ -45,6 +35,11 @@ public class LigneFacture {
         this.article = article;
     }
 
+
+
+    @Column
+    private Integer quantite;
+
     public Integer getQuantite() {
         return quantite;
     }
@@ -53,4 +48,16 @@ public class LigneFacture {
         this.quantite = quantite;
     }
 
+
+
+    @ManyToOne
+    private Facture facture;
+
+    public Facture getFacture() {
+        return facture;
+    }
+
+    public void setFacture(Facture facture) {
+        this.facture = facture;
+    }
 }

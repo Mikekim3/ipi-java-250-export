@@ -1,0 +1,24 @@
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Âge</th>
+        <th>Adresse</th>
+        <th>Code Postal</th>
+        <th>Ville</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#clients}}
+        <tr>
+            <td>{{nom}}</td>
+            <td>{{prenom}}</td>
+            <td>{{age}}</td>
+            <th>{{adresse}}</th>
+            <th>{{codePostal}}</th>
+            <th>{{ville}}</th>
+        </tr>
+    {{/clients}}
+    </tbody>
+</table>

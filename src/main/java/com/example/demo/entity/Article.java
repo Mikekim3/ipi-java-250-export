@@ -12,12 +12,6 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
-    private String libelle;
-
-    @Column
-    private Double prix;
-
     public Long getId() {
         return id;
     }
@@ -25,6 +19,10 @@ public class Article {
     public void setId(Long id) {
         this.id = id;
     }
+
+
+    @Column
+    private String libelle;
 
     public String getLibelle() {
         return libelle;
@@ -34,6 +32,10 @@ public class Article {
         this.libelle = libelle;
     }
 
+
+    @Column
+    private Double prix;
+
     public Double getPrix() {
         return prix;
     }
@@ -41,4 +43,10 @@ public class Article {
     public void setPrix(Double prix) {
         this.prix = prix;
     }
+
+
+    @Column private String marque;
+
+    public String getMarque() {return marque;}
+    public void setMarque(String marque) { this.marque = marque; }
 }
